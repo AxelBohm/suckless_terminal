@@ -185,12 +185,21 @@ static MouseShortcut mshortcuts[] = {
 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
 };
 
+
+/* custom externalpipe commands */
+static char *openurlcmd[] = { "/bin/sh", "-c", "~/bin/link_grabber.sh ", "externalpipe", NULL };
+static char *openytcmd[] =  { "/bin/sh", "-c", "~/bin/yt_grabber.sh ", "externalpipe", NULL };
+static char *arxivdlcmd[] = { "/bin/sh", "-c", "~/bin/arxiv_dl.sh ", "externalpipe", NULL };
+
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
+    { TERMMOD,              XK_U,           externalpipe,   { .v = openurlcmd } },
+    { TERMMOD,              XK_Y,           externalpipe,   { .v = openytcmd } },
+    { TERMMOD,              XK_A,           externalpipe,   { .v = arxivdlcmd } },
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
