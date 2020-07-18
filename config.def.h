@@ -99,24 +99,24 @@ float alpha = 0.8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+    "#222222", /* bg     */
+	"#aa4450", /* red    */
+	"#719611", /* green  */
+	"#ff9800", /* yellow */
+	"#6688aa", /* blue   */
+	"#8f6f8f", /* purple */
+	"#528b8b", /* aqua   */
+	"#d3d3d3", /* gray   */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#686858", /* gray   */
+	"#ff6a6a", /* red    */
+	"#b1d631", /* green  */
+	"#87875f", /* yellow */
+	"#90b0d1", /* blue   */
+	"#8181a6", /* purple */
+	"#87ceeb", /* aqua   */
+    "#c2c2b0", /* fg     */
 
 	[255] = 0,
 
@@ -131,10 +131,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 258;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
